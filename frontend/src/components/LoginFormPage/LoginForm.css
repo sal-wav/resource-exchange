@@ -8,7 +8,8 @@
 #loginForm {
     width: 338px;
     height: 500px;
-    border-radius: 3px;
+    border-radius: 1px;
+    border: 1px solid #F1EEEA;
     padding: 20px 30px;
     background-color: white;
     display: flex;

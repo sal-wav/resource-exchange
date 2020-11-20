@@ -18,7 +18,7 @@ const LoginFormPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        return dispatchEvent(sessionActions.login({
+        return dispatch(sessionActions.login({
             credential, password
         }))
             .catch((res) => {
