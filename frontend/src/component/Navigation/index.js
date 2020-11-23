@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
@@ -10,7 +9,7 @@ const Navigation = ({ isLoaded }) => {
     let sessionLinks;
     if (sessionUser) {
         sessionLinks = (
-            <ProfileButton use={sessionUser} />
+            <ProfileButton user={sessionUser} />
         );
     } else {
         sessionLinks = (
