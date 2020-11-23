@@ -14,16 +14,19 @@ const Navigation = ({ isLoaded }) => {
     } else {
         sessionLinks = (
             <>
-                <NavLink to='/login'>Log In</NavLink>
-                <NavLink to='/signup'>Signup</NavLink>
+                <NavLink id='login' to='/login'>Log in</NavLink>
+                <NavLink id='signup' to='/signup'>Sign up</NavLink>
             </>
         );
     }
 
     return (
         <ul>
-            <li>
-                <NavLink to='/'exact={true}>Home</NavLink>
+            <li className='center'>
+                <NavLink id='home' to='/'exact={true}>Home</NavLink>
+            </li>
+            <li className='right'>
+                <button id='search'>Search</button>
                 {isLoaded && sessionLinks}
             </li>
         </ul>

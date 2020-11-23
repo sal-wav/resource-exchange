@@ -3,8 +3,11 @@ ul {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     color: #282828;
-    display: flex;
-    
+    height: 30px;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0;
 }
 
 ul:hover {
@@ -13,4 +16,21 @@ ul:hover {
 
 ul:active {
     color: #028858;
+}
+
+
+.center {
+    grid-column-start: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.right {
+    grid-column-start: 3;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#search, #login, #signup {
+    margin: 0 12px;
 }
