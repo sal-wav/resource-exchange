@@ -33,8 +33,8 @@ const SignupFormPage = () => {
         <div id='formContainer'>
             <form id='signupForm' onSubmit={handleSubmit} >
                 <p id='signupTitle'>Signup</p>
-                <ul className='errors'>
-                    {errors.map((error, index) => <li key={index}>{error}</li>)}
+                <ul className={errors.length > 0 ? 'errors' : "hiddenErrors"}>
+                    {errors.map((error, index) => <li className='error' key={index}>{error}</li>)}
                 </ul>
                 <input className='input' type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name' required/>
                 <input className='input' type='text' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' required/>

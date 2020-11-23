@@ -30,8 +30,8 @@ const LoginFormPage = () => {
         <div id='formContainer'>
             <form id='loginForm' onSubmit={handleSubmit}>
                     <p id='loginTitle'>Log In</p>
-                    <ul className='errors'>
-                        {errors.map((error, index) => <li key={index}>{error}</li>)}
+                    <ul className={errors.length > 0 ? 'errors' : "hiddenErrors"}>
+                        {errors.map((error, index) => <li className='error' key={index}>{error}</li>)}
                     </ul>
                     <input className='input' type='text' value={credential} onChange={(e) => setCredential(e.target.value)} placeholder='Email' required/>
                     <input className='input' type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password' required/>
