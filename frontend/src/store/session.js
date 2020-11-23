@@ -17,11 +17,25 @@ const removeUser = () => {
     };
 };
 
-const restoreUser = () => async dispatch => {
+export const restoreUser = () => async dispatch => {
     const res = await fetch('/api/session');
     dispatch(setUser(res.data.user));
     return res;
 };
+
+export const signup = (user) => async dispatch => {
+    const { name, email, password } = user;
+    const res = await fetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({
+            name,
+            email,
+            password
+        })
+    });
+    dispatch(setUser(res.data.user));
+    return res;
+}
 
 export const login = (user) => async (dispatch) => {
     const { credential, password } = user;
