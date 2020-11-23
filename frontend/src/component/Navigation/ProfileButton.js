@@ -1,8 +1,15 @@
-
+import React from 'react';
 
 const ProfileButton = () => {
+
+    const UserIcon = () => (
+        <div >
+            <i class="far fa-smile"></i>
+        </div>
+    );
+
     return (
-        <i class="far fa-smile"></i>
+        <UserIcon />
     )
 }
 

@@ -1,0 +1,14 @@
+ul {
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color: #282828;
+}
+
+ul:hover {
+    color: #028858;
+}
+
+ul:active {
+    color: #028858;
+}
