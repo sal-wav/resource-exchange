@@ -7,7 +7,7 @@ const ProfileButton = ({user}) => {
     const [showMenu, setShowMenu] = useState(false);
 
     const openMenu = () => {
-        if (showMenu) {
+        if (!showMenu) {
             setShowMenu(true);
         };
     }
@@ -32,11 +32,11 @@ const ProfileButton = ({user}) => {
     return (
         <>
             <button onClick={openMenu}>
-                <i class="far fa-smile"></i>
+                <i className="far fa-smile"></i>
             </button>
             {showMenu && (
                 <ul className='dropdown'>
-                    <li>{user.name}</li>
+                    <li>{user.username}</li>
                     <li>{user.email}</li>
                     <li>
                         <button onClick={logout}>Log Out</button>

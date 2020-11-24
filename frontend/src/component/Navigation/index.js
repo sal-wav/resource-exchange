@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import SearchButton from './Search';
 import './Navigation.css';
 
 const Navigation = ({ isLoaded }) => {
@@ -26,7 +27,7 @@ const Navigation = ({ isLoaded }) => {
                 <NavLink id='home' to='/'exact={true}>Home</NavLink>
             </li>
             <li className='right'>
-                <button id='search'>Search</button>
+                <SearchButton />
                 {isLoaded && sessionLinks}
             </li>
         </ul>

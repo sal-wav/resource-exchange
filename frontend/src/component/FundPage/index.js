@@ -1,0 +1,7 @@
+const FundPage = () => {
+
+    return (
+        <>
+        </>
+    )
+}
