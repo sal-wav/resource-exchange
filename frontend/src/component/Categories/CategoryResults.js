@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import * as fundActions from '../../store/fund';
 
 export const CategoryResults = () => {
-    console.log('hit')
     const params = useParams();
     // const funds = useSelector(state => state.fund.funds);
     // const categories = useSelector(state => state.category.categories);
