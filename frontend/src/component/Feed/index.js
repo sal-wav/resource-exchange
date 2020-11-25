@@ -14,9 +14,9 @@ const Feed = () => {
         dispatch(fundActions.receiveFund()).then(() => setIsLoading(false))
     }, [dispatch])
 
-    useEffect(() => {
-        dispatch(receiveCategory()).then(() => setIsLoading(false))
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(receiveCategory()).then(() => setIsLoading(false))
+    // }, [dispatch])
 
     // if(params.category) {
     //     let categoryName = params.category;
