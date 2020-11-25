@@ -24,7 +24,6 @@ const FundPage = () => {
 
     if(isLoading) return null;
 
-
     return (
         <>
             <p>{fundResult.title}</p>

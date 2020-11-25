@@ -22,7 +22,7 @@ function App(props) {
   }, [dispatch]);
   useEffect(() => {
     dispatch(receiveCategory()).then(() => setIsLoaded(true))
-}, [dispatch]);
+  }, [dispatch]);
 
   return isLoaded && (
     <>
