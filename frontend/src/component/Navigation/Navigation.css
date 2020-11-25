@@ -23,12 +23,14 @@ ul:active {
     grid-column-start: 2;
     display: flex;
     justify-content: center;
+    align-self: center;
 }
 
 .right {
     grid-column-start: 3;
     display: flex;
     justify-content: flex-end;
+    align-self: center;
 }
 
 #search, #login, #signup {

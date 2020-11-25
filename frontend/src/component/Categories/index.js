@@ -17,10 +17,10 @@ const Categories = () => {
     if(isLoading) return null;
 
     return (
-        <ul className='container'>
+        <ul className='categoryContainer'>
             {categories.map((category) => (
-                <li key={category.id}>
-                    <NavLink to={`/${category.name}`}>{category.name}</NavLink>
+                <li className='category' key={category.id}>
+                    <NavLink className='link' to={`/${category.name}`}>{category.name}</NavLink>
                 </li>
             ))}
         </ul>
