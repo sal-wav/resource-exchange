@@ -8,11 +8,14 @@ const Navigation = ({ isLoaded }) => {
     const sessionUser = useSelector(state => state.session.user);
 
     let sessionLinks;
+    let redirect;
     if (sessionUser) {
+        redirect = '/fund-form'
         sessionLinks = (
             <ProfileButton user={sessionUser} />
         );
     } else {
+        redirect = '/login'
         sessionLinks = (
             <>
                 <NavLink id='login' to='/login'>Log in</NavLink>
@@ -23,6 +26,9 @@ const Navigation = ({ isLoaded }) => {
 
     return (
         <ul className='navbar'>
+            <li>
+                <NavLink to={redirect} >Start a fund</NavLink>
+            </li>
             <li className='center'>
                 <NavLink id='home' to='/'exact={true}>Home</NavLink>
             </li>
