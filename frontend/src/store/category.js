@@ -11,7 +11,7 @@ const postCategory = (category) => {
 };
 
 export const receiveCategory = () => async dispatch => {
-    const res = await fetch('api/category');
+    const res = await fetch('/api/category');
     dispatch(postCategory(res.data));
 };
 

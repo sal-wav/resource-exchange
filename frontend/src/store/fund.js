@@ -18,7 +18,7 @@ const deleteFund = () => {
 };
 
 export const receiveFund = () => async dispatch => {
-    const res = await fetch('api/fund');
+    const res = await fetch('/api/fund');
     dispatch(postFund(res.data));
 };
 

@@ -8,6 +8,7 @@ import './Feed.css'
 const Feed = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [category, setCategory] = useState(undefined);
+    // const [ page, setPage ]
     const params = useParams();
     const dispatch = useDispatch();
 
@@ -32,10 +33,10 @@ const Feed = () => {
 
     return (
         <div className='feedContainer'>
-            <div className='featured'>
+            <div className='featured' >
                 <p id='ftTitle'>FEATURED</p>
                 <img id='ftImg' src={funds[0].image}></img>
-                <a id='ftTitleLink'>{funds[0].title}</a>
+                <a id='ftTitleLink' href={`/funds/${funds[0].title}`}>{funds[0].title}</a>
                 <p id='ftSubtitle'>{funds[0].subtitle}</p>
             </div>
             <ul className='recommended'>
@@ -43,7 +44,7 @@ const Feed = () => {
                 {funds.map((fund) => (
                     <li className='recPreview' key={`key-${fund.id}`}>
                         <img className='img' src={fund.image}></img>
-                        <a className='titleLink'>{fund.title}</a>
+                        <a className='titleLink' href={`/funds/${fund.title}`}>{fund.title}</a>
                         <p className='subtitle'>{fund.subtitle}</p>
                     </li>
                 ))}

@@ -8,8 +8,9 @@ import Navigation from "./component/Navigation";
 import * as sessionActions from "./store/session";
 import SearchResults from "./component/SearchResults";
 import Categories from "./component/Categories";
-import CategoryResults from "./component/Categories";
+import CategoryResults from "./component/Categories/CategoryResults.js";
 import { receiveCategory } from "./store/category";
+import FundPage from "./component/FundPage/index";
 
 
 function App(props) {
@@ -28,6 +29,9 @@ function App(props) {
       <Categories isLoaded={isLoaded}/>
       {isLoaded && (
         <Switch>
+          <Route path='/funds/:fundName'>
+            <FundPage />
+          </Route>
           <Route path='/categories/:categoryName'>
             <CategoryResults />
           </Route>
