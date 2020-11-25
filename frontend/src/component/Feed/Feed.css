@@ -28,17 +28,11 @@
 
 .recommended {
     grid-column-start: 2;
-    /* display: grid;
-    grid-template-columns: 200px 300px; */
 }
 
 #rectitle {
     grid-row-start: 1;
 }
-
-/* .img {
-    width: fit-content;
-} */
 
 .recPreview {
     grid-row: 2;
