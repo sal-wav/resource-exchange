@@ -10,6 +10,8 @@ export const CategoryResults = () => {
     //     category.name === params.categoryName
     // ))
 
+    /////////
+
     // useEffect(() => {
     //     let filteredResults = funds.filter(fund => (
     //         fund.categoryId === (category.id)
