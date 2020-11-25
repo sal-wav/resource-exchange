@@ -1,18 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as fundActions from "../../store/fund";
+import { receiveCategory } from "../../store/category";
+import { useParams } from 'react-router-dom';
 
 const Feed = () => {
     const [isLoading, setIsLoading] = useState(true);
-
-
+    const [category, setCategory] = useState(undefined);
+    const params = useParams();
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(fundActions.receiveFund()).then(() => setIsLoading(false))
     }, [dispatch])
 
-    const funds = useSelector(state => state.fund.funds);
-    console.log(funds);
+    useEffect(() => {
+        dispatch(receiveCategory()).then(() => setIsLoading(false))
+    }, [dispatch])
+
+    // if(params.category) {
+    //     let categoryName = params.category;
+    //     const categories = useSelector(state => state.category.categories);
+    //     const allFunds = useSelector(state => state.fund.funds);
+    //     let funds = allFunds.categoryId === params.category
+    // } else {
+    // }
+    let funds = useSelector(state => state.fund.funds);
 
     if(isLoading) return null;
 

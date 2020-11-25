@@ -7,6 +7,8 @@ import Feed from "./component/Feed/";
 import Navigation from "./component/Navigation";
 import * as sessionActions from "./store/session";
 import SearchResults from "./component/SearchResults";
+import Categories from "./component/Categories";
+import CategoryResults from "./component/Categories"
 
 function App(props) {
   const dispatch = useDispatch();
@@ -18,8 +20,12 @@ function App(props) {
   return isLoaded && (
     <>
       <Navigation isLoaded={isLoaded}/>
+      <Categories />
       {isLoaded && (
         <Switch>
+          <Route path='/:category'>
+            <CategoryResults />
+          </Route>
           <Route path='/search/:searchWord'>
             <SearchResults />
           </Route>

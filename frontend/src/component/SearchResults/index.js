@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import './SearchResults.css';
 
 const SearchResults = () => {
     const [results, setResults] = useState([]);
