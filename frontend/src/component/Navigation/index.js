@@ -22,7 +22,7 @@ const Navigation = ({ isLoaded }) => {
     }
 
     return (
-        <ul>
+        <ul className='navbar'>
             <li className='center'>
                 <NavLink id='home' to='/'exact={true}>Home</NavLink>
             </li>

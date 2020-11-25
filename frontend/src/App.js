@@ -8,7 +8,9 @@ import Navigation from "./component/Navigation";
 import * as sessionActions from "./store/session";
 import SearchResults from "./component/SearchResults";
 import Categories from "./component/Categories";
-import CategoryResults from "./component/Categories"
+import CategoryResults from "./component/Categories";
+import { receiveCategory } from "./store/category";
+
 
 function App(props) {
   const dispatch = useDispatch();
@@ -16,14 +18,17 @@ function App(props) {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
+  useEffect(() => {
+    dispatch(receiveCategory()).then(() => setIsLoaded(true))
+}, [dispatch]);
 
   return isLoaded && (
     <>
       <Navigation isLoaded={isLoaded}/>
-      <Categories />
+      <Categories isLoaded={isLoaded}/>
       {isLoaded && (
         <Switch>
-          <Route path='/:category'>
+          <Route path='/categories/:categoryName'>
             <CategoryResults />
           </Route>
           <Route path='/search/:searchWord'>

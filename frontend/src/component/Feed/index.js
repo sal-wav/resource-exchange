@@ -38,16 +38,16 @@ const Feed = () => {
                 <a id='ftTitleLink'>{funds[0].title}</a>
                 <p id='ftSubtitle'>{funds[0].subtitle}</p>
             </div>
-            <div className='recommended'>
+            <ul className='recommended'>
                 <p id='rectitle'>RECOMMENDED FOR YOU</p>
                 {funds.map((fund) => (
-                    <div className='recPreview' key={`key-${fund.id}`}>
+                    <li className='recPreview' key={`key-${fund.id}`}>
                         <img className='img' src={fund.image}></img>
                         <a className='titleLink'>{fund.title}</a>
                         <p className='subtitle'>{fund.subtitle}</p>
-                    </div>
+                    </li>
                 ))}
-            </div>
+            </ul>
         </div>
     )
 }

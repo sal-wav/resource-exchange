@@ -1,4 +1,4 @@
-ul {
+.navbar {
     list-style-type: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
@@ -10,11 +10,11 @@ ul {
     margin: 0;
 }
 
-ul:hover {
+.navbar:hover {
     color: #028858;
 }
 
-ul:active {
+.navbar:active {
     color: #028858;
 }
 
