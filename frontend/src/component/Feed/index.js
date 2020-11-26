@@ -39,16 +39,20 @@ const Feed = () => {
                 <a id='ftTitleLink' href={`/funds/${funds[0].title}`}>{funds[0].title}</a>
                 <p id='ftSubtitle'>{funds[0].subtitle}</p>
             </div>
-            <ul className='recommended'>
-                <p id='rectitle'>RECOMMENDED FOR YOU</p>
-                {funds.map((fund) => (
-                    <li className='recPreview' key={`key-${fund.id}`}>
-                        <img className='img' src={fund.image}></img>
-                        <a className='titleLink' href={`/funds/${fund.title}`}>{fund.title}</a>
-                        <p className='subtitle'>{fund.subtitle}</p>
-                    </li>
-                ))}
-            </ul>
+            <div className='recommended'>
+                <p id='recTitle'>RECOMMENDED FOR YOU</p>
+                <div className='previewContainer'>
+                    {funds.map((fund) => (
+                        <div className='recPreview' key={`key-${fund.id}`}>
+                            <img className='img' src={fund.image}></img>
+                            <div>
+                                <a className='titleLink' href={`/funds/${fund.title}`}>{fund.title}</a>
+                                <p className='subtitle'>{fund.subtitle}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }

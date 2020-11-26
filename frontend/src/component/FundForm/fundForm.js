@@ -53,7 +53,7 @@ const FundForm = () => {
             goal,
             image,
             categoryId,
-            ownerid
+            // ownerid
         }
         dispatch(fundActions.makeFund(newFund))
 
@@ -64,6 +64,7 @@ const FundForm = () => {
     return (
         <div className='formContainer'>
             <form onSubmit={handleSubmit}>
+                <input type='hidden' value={ownerId}></input>
                 <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder='title' required></input>
                 <button onClick={showSubtitleInput}>next</button>
                 {showSubtitle && (
