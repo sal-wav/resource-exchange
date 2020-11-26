@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import './Navigation.css';
 
 const SearchButton = (props) => {
     const [showInput, setShowInput] = useState(false);
@@ -22,15 +23,15 @@ const SearchButton = (props) => {
 
     return (
         <>
-            <button onClick={openInput}>
+            <button id='searchBtn' className='btn' onClick={openInput}>
                 Search
             </button>
             {showInput && (
                 <>
                     <form onSubmit={handleSubmit}>
-                        <input className='search' type='search' value={value} onChange={(e) => setValue(e.target.value)} placeholder='Search for funds or categories'/>
+                        <input id='searchInput' type='search' value={value} onChange={(e) => setValue(e.target.value)} placeholder='Search for funds or categories'/>
                     </form>
-                    <button onClick={closeInput}>X</button>
+                    <button className='btn' onClick={closeInput}>X</button>
                 </>
             )}
         </>

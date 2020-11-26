@@ -1,7 +1,10 @@
 .categoryContainer {
+    list-style-type: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 30px;
     padding: 0 300px;
+    border-bottom: 1px solid #DCDEDD;
 }
 
 .categoryLink {
@@ -12,9 +15,15 @@
 .link {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
+    color: #656969;
 }
 
 .link:hover {
+    color: #034752;
+
+}
+
+.link:active {
     color: #034752;
 
 }

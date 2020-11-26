@@ -27,10 +27,10 @@ const Navigation = ({ isLoaded }) => {
     return (
         <ul className='navbar'>
             <li>
-                <NavLink to={redirect} >Start a fund</NavLink>
+                <NavLink className='link' to={redirect} >Start a fund</NavLink>
             </li>
             <li className='center'>
-                <NavLink id='home' to='/'exact={true}>Home</NavLink>
+                <NavLink className='link' id='home' to='/'exact={true}>Home</NavLink>
             </li>
             <li className='right'>
                 <SearchButton />
