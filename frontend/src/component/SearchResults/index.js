@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './SearchResults.css';
 import * as fundActions from "../../store/fund";
+import ResultMessage from "./ResultMessage";
 
 const SearchResults = () => {
     const [results, setResults] = useState([]);
@@ -17,26 +18,16 @@ const SearchResults = () => {
 
     useEffect(() => {
         let filteredResults = funds.filter(fund => (
-            fund.title.includes(params.searchWord)
+            fund.title.toLowerCase().includes(params.searchWord.toLowerCase())
         ))
         setResults(filteredResults);
     }, [funds, params])
-
-    let resultWord;
-    if (results.length === 1) {
-        resultWord = 'fund'
-    } else if (results.length > 1) {
-        resultWord = 'funds'
-    }
 
     if (isLoading) return null;
 
     return (
         <div className='searchContainer'>
-            <div className='resHeading'>
-                <h2 className='text'>Looking for <span id='searchedWord'>{params.searchWord}</span> funds</h2>
-            </div>
-            <h3 id='explore' className='text'>Explore {results.length} {resultWord}</h3>
+            <ResultMessage results={results}/>
             <div className='resContainer'>
                 {results.map(result => (
                     <div className='resPreview'>

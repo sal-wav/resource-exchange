@@ -10,26 +10,40 @@
     padding: 30px 0 30px 0;
     display: flex;
     justify-content: center;
+    letter-spacing: 1px;
 }
+
 .text {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.messageContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#try {
+    padding: 150px
+}
+
 #explore {
     max-width: 1246px;
-    margin: auto;
+    margin:  30px auto 30px;
+    letter-spacing: 1px;
+    font-size: 22px
 }
 
 .resContainer {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-flow: row wrap;
     width: 1246px;
     margin: auto;
 }
 
 .resPreview {
+    max-width: 390px;
     font-family: Arial, Helvetica, sans-serif;
+    margin-right: auto
 }
 
 .resImg {

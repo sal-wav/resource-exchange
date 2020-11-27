@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 30px;
-    padding: 7px;
+    padding: 15px 0 15px 0;
     margin-bottom: 0;
     max-width: 1000px;
     margin: auto
@@ -23,6 +23,14 @@
     font-family: Arial, Helvetica, sans-serif;
     color: #656969;
     position: relative;
+}
+
+.link:hover {
+    color: #034752;
+}
+
+.activeLink {
+    color: #034752;
 }
 
 .link::before {
