@@ -4,11 +4,12 @@
     font-size: 1em;
     color: #282828;
     height: 30px;
-    padding: 12px 20px;
+    padding: 18px 25px;
+    margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 0;
     border-bottom: 1px solid #DCDEDD;
+    align-items: center;
 }
 
 
@@ -20,6 +21,11 @@
     color: #028858;
 }
 
+.left {
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+}
 
 .center {
     grid-column-start: 2;
@@ -72,7 +78,7 @@
 }
 
 #searchInput {
-    font-size: 20px;
+    font-size: 18px;
     background-color: transparent;
     padding-left: 70px;
     z-index: 10;
@@ -118,8 +124,6 @@
 .dropdownContent {
     width: 100%;
     height: auto;
-    /* flex: auto; */
-    /* margin: auto; */
 }
 
 input[type="search"]::-webkit-search-decoration,

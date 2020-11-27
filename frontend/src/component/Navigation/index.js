@@ -26,7 +26,7 @@ const Navigation = ({ isLoaded }) => {
 
     return (
         <ul className='navbar'>
-            <li>
+            <li className='left'>
                 <NavLink className='link' to={redirect} >Start a fund</NavLink>
             </li>
             <li className='center'>
