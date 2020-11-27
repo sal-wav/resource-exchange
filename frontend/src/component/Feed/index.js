@@ -33,14 +33,16 @@ const Feed = () => {
 
     return (
         <div className='feedContainer'>
-            <div className='featured' >
-                <p id='ftTitle'>FEATURED</p>
-                <img id='ftImg' src={funds[0].image}></img>
-                <a id='ftTitleLink' href={`/funds/${funds[0].title}`}>{funds[0].title}</a>
-                <p id='ftSubtitle'>{funds[0].subtitle}</p>
+            <div id='ftPreview'>
+                <div className='featured' >
+                    <h3 id='ftTitle'>FEATURED</h3>
+                    <img id='ftImg' src={funds[0].image}></img>
+                    <a id='ftTitleLink' href={`/funds/${funds[0].title}`}>{funds[0].title}</a>
+                    <p id='ftSubtitle'>{funds[0].subtitle}</p>
+                </div>
             </div>
             <div className='recommended'>
-                <p id='recTitle'>RECOMMENDED FOR YOU</p>
+                <h3 id='recTitle'>RECOMMENDED FOR YOU</h3>
                 <div className='previewContainer'>
                     {funds.map((fund) => (
                         <div className='recPreview' key={`key-${fund.id}`}>
