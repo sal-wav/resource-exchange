@@ -1,0 +1,21 @@
+.footer {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #656969;
+}
+
+#title {
+    height: 50px;
+    border-top: 1px solid #DCDEDD;
+    border-bottom: 1px solid #DCDEDD;
+    font-size: 16px;
+    padding-top: 15px;
+}
+
+.middle {
+    height: 100px;
+    border-bottom: 1px solid #DCDEDD;
+}
+
+.bottom {
+    height: 50px;
+}

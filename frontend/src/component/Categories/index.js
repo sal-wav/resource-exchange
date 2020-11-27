@@ -13,7 +13,7 @@ const Categories = ({ isLoaded }) => {
         <ul className='categoryContainer'>
             {categories.map((category) => (
                 <li className='category' key={category.id}>
-                    <NavLink className='link' to={`/categories/${category.name}`}>{category.name}</NavLink>
+                    <NavLink className='link' activeClassName='activeLink' to={`/categories/${category.name}`}>{category.name}</NavLink>
                 </li>
             ))}
         </ul>

@@ -12,6 +12,7 @@ import CategoryResults from "./component/Categories/CategoryResults.js";
 import { receiveCategory } from "./store/category";
 import FundPage from "./component/FundPage/index";
 import FundForm from "./component/FundForm/fundForm";
+import Footer from "./component/Footer/index";
 
 
 function App(props) {
@@ -53,6 +54,7 @@ function App(props) {
           </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }
