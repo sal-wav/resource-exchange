@@ -1,0 +1,37 @@
+
+
+#searchedWord {
+    color: #037362;
+    border-bottom: 1px solid  #037362;
+}
+
+.resHeading {
+    border-bottom: 1px solid  #DCDEDD;
+    padding: 30px 0 30px 0;
+    display: flex;
+    justify-content: center;
+}
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#explore {
+    max-width: 1246px;
+    margin: auto;
+}
+
+.resContainer {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 1246px;
+    margin: auto;
+}
+
+.resPreview {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.resImg {
+    max-width: 390px;
+}

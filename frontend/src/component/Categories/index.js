@@ -10,13 +10,16 @@ const Categories = ({ isLoaded }) => {
     if(!isLoaded) return null;
 
     return (
-        <ul className='categoryContainer'>
-            {categories.map((category) => (
-                <li className='category' key={category.id}>
-                    <NavLink className='link' activeClassName='activeLink' to={`/categories/${category.name}`}>{category.name}</NavLink>
-                </li>
-            ))}
-        </ul>
+        <div className='categoryBar'>
+            <ul className='categoryContainer'>
+                {categories.map((category) => (
+                    <li className='category' key={category.id}>
+                        <NavLink className='link' activeClassName='activeLink' to={`/categories/${category.name}`}>{category.name}</NavLink>
+                    </li>
+                ))}
+            </ul>
+
+        </div>
     );
 }
 

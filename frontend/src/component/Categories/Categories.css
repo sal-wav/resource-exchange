@@ -1,11 +1,21 @@
+.categoryBar {
+    border-bottom: 1px solid #DCDEDD;
+}
+
 .categoryContainer {
     list-style-type: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 30px;
-    padding: 7px 300px;
-    border-bottom: 1px solid #DCDEDD;
+    padding: 7px;
     margin-bottom: 0;
+    max-width: 1000px;
+    margin: auto
+}
+
+.category {
+    align-self: center;
+    justify-self: center;
 }
 
 .link {
@@ -40,4 +50,3 @@
     visibility: visible;
     transform: scaleX(1);
 }
-
