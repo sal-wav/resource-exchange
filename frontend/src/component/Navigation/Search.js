@@ -23,17 +23,17 @@ const SearchButton = (props) => {
 
     return (
         <>
+            {showInput && (
+                <>
+                    <form id='searchForm' onSubmit={handleSubmit}>
+                        <input id='searchInput' type='search' value={value} onChange={(e) => setValue(e.target.value)} placeholder='Search for funds or categories'/>
+                    </form>
+                    <button id='closeSearchBtn' className='btn' onClick={closeInput}>X</button>
+                </>
+            )}
             <button id='searchBtn' className='btn' onClick={openInput}>
                 Search
             </button>
-            {showInput && (
-                <>
-                    <form onSubmit={handleSubmit}>
-                        <input id='searchInput' type='search' value={value} onChange={(e) => setValue(e.target.value)} placeholder='Search for funds or categories'/>
-                    </form>
-                    <button className='btn' onClick={closeInput}>X</button>
-                </>
-            )}
         </>
     )
 }

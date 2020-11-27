@@ -18,8 +18,8 @@ const Navigation = ({ isLoaded }) => {
         redirect = '/login'
         sessionLinks = (
             <>
-                <NavLink id='login' to='/login'>Log in</NavLink>
-                <NavLink id='signup' to='/signup'>Sign up</NavLink>
+                <NavLink id='login' className='link' to='/login'>Log in</NavLink>
+                <NavLink id='signup' className='link' to='/signup'>Sign up</NavLink>
             </>
         );
     }

@@ -36,13 +36,15 @@ const ProfileButton = ({user}) => {
                 <i className="far fa-smile"></i>
             </button>
             {showMenu && (
-                <ul className='dropdown'>
-                    <li>{user.username}</li>
-                    <li>{user.email}</li>
-                    <li>
-                        <button onClick={logout}>Log Out</button>
-                    </li>
-                </ul>
+                <div className='dropdownContainer'>
+                    <ul id='dropdown'>
+                        <li className='dropdownContent'>{user.username}</li>
+                        <li className='dropdownContent'>{user.email}</li>
+                        <li className='dropdownContent'>
+                            <button className='btn' onClick={logout}>Log Out</button>
+                        </li>
+                    </ul>
+                </div>
             )}
         </>
     )
