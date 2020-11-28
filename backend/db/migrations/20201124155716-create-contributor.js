@@ -18,10 +18,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Users' }
       },
-      rewardId: {
+      exchangeId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: 'Rewards' }
+        references: { model: 'Exchanges' }
       },
       createdAt: {
         allowNull: false,

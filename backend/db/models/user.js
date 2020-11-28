@@ -1,6 +1,7 @@
 'use strict';
 const { Model, Validator } = require('sequelize');
 const bcrypt = require("bcryptjs");
+const contributor = require('./contributor');
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
@@ -38,7 +39,8 @@ module.exports = (sequelize, DataTypes) => {
       return await User.scope('currentUser').findByPk(user.id);
     };
     static associate(models) {
-      // define association here
+      User.hasMany(models.Fund, { foreignKey: ownerId });
+      User.hasMany{models.Contributor, { foreignKey: contributorId }};
     }
   };
   User.init(

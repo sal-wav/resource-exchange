@@ -10,7 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Fund.belongsTo(models.User, { foreignKey: ownerId });
+      Fund.belongsTo(models.Category, { foreignKey: categoryId });
+      Fund.hasMany(models.Exchange, { foreignKey: fundId });
+      Fund.hasMany(models.Contributor, { foreignKey: fundId });
     }
   };
   Fund.init({
@@ -18,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     subtitle: DataTypes.STRING,
     description: DataTypes.TEXT,
     goal: DataTypes.INTEGER,
+    funded: DataTypes.INTEGER,
     image: DataTypes.STRING,
     categoryId: DataTypes.INTEGER,
     ownerId: DataTypes.INTEGER

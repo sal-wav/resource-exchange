@@ -25,6 +25,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
+      funded: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
       image: {
         allowNull: false,
         type: Sequelize.STRING

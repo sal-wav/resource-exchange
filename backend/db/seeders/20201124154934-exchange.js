@@ -2,12 +2,12 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('Rewards', [
+    await queryInterface.bulkInsert('Exchanges', [
       {
         fundId: 1,
         amount: 5,
         title: 'Thank you!',
-        description: 'Contribute without reward',
+        description: 'Contribute without exchange',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -15,7 +15,7 @@ module.exports = {
         fundId: 1,
         amount: 10,
         title: 'Thank you!',
-        description: 'Contribute without reward',
+        description: 'Contribute without exchange',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -23,7 +23,7 @@ module.exports = {
         fundId: 1,
         amount: 30,
         title: 'Thank you!',
-        description: 'Contribute without reward',
+        description: 'Contribute without exchange',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -31,7 +31,7 @@ module.exports = {
         fundId: 1,
         amount: 50,
         title: 'Thank you!',
-        description: 'Contribute without reward',
+        description: 'Contribute without exchange',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -39,7 +39,7 @@ module.exports = {
         fundId: 1,
         amount: 100,
         title: 'Thank you!',
-        description: 'Contribute without reward',
+        description: 'Contribute without exchange',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -47,6 +47,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('Rewards', null, {});
+    await queryInterface.bulkDelete('Exchanges', null, {});
   }
 };
