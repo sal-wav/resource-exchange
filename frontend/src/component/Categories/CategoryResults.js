@@ -44,14 +44,15 @@ const CategoryResults = () => {
             <div className='resHeading'>
                 <h2 className='text'>Looking for <span id='searchedWord'>{params.categoryName}</span> funds</h2>
             </div>
+            <h3 id='explore' className='text'>Explore {results.length} funds</h3>
             <div className='resContainer'>
                 {results.map(result => (
-                    <div className='resPreview'>
-                        <img className='resImg' src={result.image}></img>
-                        <p>{result.title}</p>
-                        <p>{result.subtitle}</p>
-                        <p>${result.goal}</p>
-                    </div>
+                        <div className='resPreview'>
+                            <img className='resImg' src={result.image}></img>
+                            <a className='link' href={`/funds/${result.title}`}>{result.title}</a>
+                            <p className='subtitle'>{result.subtitle}</p>
+                            <p className='goal'>${result.goal}</p>
+                        </div>
                 ))}
             </div>
 

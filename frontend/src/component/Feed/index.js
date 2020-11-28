@@ -1,33 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as fundActions from "../../store/fund";
-import { useParams } from 'react-router-dom';
-import { receiveCategory } from "../../store/category";
 import './Feed.css'
 
 const Feed = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const [category, setCategory] = useState(undefined);
-    // const [ page, setPage ]
-    const params = useParams();
-    const dispatch = useDispatch();
+        const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fundActions.receiveFund()).then(() => setIsLoading(false))
     }, [dispatch])
 
-    // useEffect(() => {
-    //     dispatch(receiveCategory()).then(() => setIsLoading(false))
-    // }, [dispatch])
-
-    // if(params.category) {
-    //     let categoryName = params.category;
-    //     const categories = useSelector(state => state.category.categories);
-    //     const allFunds = useSelector(state => state.fund.funds);
-    //     let funds = allFunds.categoryId === params.category
-    // } else {
-    // }
-    let funds = useSelector(state => state.fund.funds);
+    let allFunds = useSelector(state => state.fund.funds);
+    let funds = allFunds.slice(1, 11)
 
     if(isLoading) return null;
 
@@ -36,9 +21,9 @@ const Feed = () => {
             <div id='ftPreview'>
                 <div className='featured' >
                     <h3 id='ftTitle'>FEATURED</h3>
-                    <img id='ftImg' src={funds[0].image}></img>
-                    <a id='ftTitleLink' href={`/funds/${funds[0].title}`}>{funds[0].title}</a>
-                    <p id='ftSubtitle'>{funds[0].subtitle}</p>
+                    <img id='ftImg' src={allFunds[0].image}></img>
+                    <a id='ftTitleLink' href={`/funds/${allFunds[0].title}`}>{allFunds[0].title}</a>
+                    <p id='ftSubtitle'>{allFunds[0].subtitle}</p>
                 </div>
             </div>
             <div className='recommended'>
