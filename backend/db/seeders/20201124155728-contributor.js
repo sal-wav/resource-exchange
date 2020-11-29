@@ -5,7 +5,7 @@ module.exports = {
     await queryInterface.bulkInsert('Contributors', [
       { fundId: 1,
         contributorId: 1,
-        rewardId: 3,
+        exchangeId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       }

@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
     };
     static associate(models) {
       User.hasMany(models.Fund, { foreignKey: ownerId });
-      User.hasMany{models.Contributor, { foreignKey: contributorId }};
+      User.hasMany(models.Contributor, { foreignKey: contributorId });
     }
   };
   User.init(

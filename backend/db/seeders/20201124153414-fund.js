@@ -8,7 +8,7 @@ module.exports = {
         description: 'I have set up 5 fridges around the city of Chicago in densely populated areas for any community members to take as needed-no questions asked. I plan to check on the fridges weekly for maintenance, cleaning, and keeping them stocked. All funds will go towards purchasing food for the fridges, and upkeep. I\'ve teamed up with local cafes and bakeries to provide exchanges for substantial donations. Feel free to stop by any of the community fridges to donate household essentials/canned foods, or to take some home with you.',
         goal: 500,
         funded: 300,
-        Image: 'https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80',
+        image: 'https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80',
         categoryId: 2,
         ownerId: 4,
         createdAt: new Date(),
