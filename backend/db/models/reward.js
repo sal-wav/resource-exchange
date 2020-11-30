@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Exchange extends Model {
+  class Reward extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -14,14 +14,14 @@ module.exports = (sequelize, DataTypes) => {
       // Exchange.hasMany(models.Contributor, { foreignKey: exchangeId });
     }
   };
-  Exchange.init({
+  Reward.init({
     fundId: DataTypes.INTEGER,
     amount: DataTypes.INTEGER,
     title: DataTypes.STRING,
     description: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Exchange',
+    modelName: 'Reward',
   });
-  return Exchange;
+  return Reward;
 };
