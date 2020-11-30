@@ -36,10 +36,10 @@ const SignupFormPage = () => {
                 <ul className={errors.length > 0 ? 'errors' : "hiddenErrors"}>
                     {errors.map((error, index) => <li className='error' key={index}>{error}</li>)}
                 </ul>
-                <input className='input' type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name' required/>
-                <input className='input' type='text' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' required/>
-                <input className='input' type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password'required/>
-                <input className='input' type='password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder='Confirm Password' required/>
+                <input className='userInput' type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name' required/>
+                <input className='userInput' type='text' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' required/>
+                <input className='userInput' type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password'required/>
+                <input className='userInput' type='password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder='Confirm Password' required/>
                 <button type='submit' id='signupBtn'>Signup</button>
             </form>
         </div>
