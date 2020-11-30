@@ -7,7 +7,7 @@ import './SignupForm.css';
 const SignupFormPage = () => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    const [name, setName] = useState('');
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -20,7 +20,7 @@ const SignupFormPage = () => {
         if (password === confirmPassword) {
             setErrors([]);
             return dispatch(sessionActions.signup({
-                name, email, password
+                email, username, password
             }))
                 .catch((res) => {
                     if (res.data && res.data.errors) setErrors(res.data.errors);
@@ -36,7 +36,7 @@ const SignupFormPage = () => {
                 <ul className={errors.length > 0 ? 'errors' : "hiddenErrors"}>
                     {errors.map((error, index) => <li className='error' key={index}>{error}</li>)}
                 </ul>
-                <input className='userInput' type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name' required/>
+                <input className='userInput' type='text' value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Name' required/>
                 <input className='userInput' type='text' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' required/>
                 <input className='userInput' type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password'required/>
                 <input className='userInput' type='password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder='Confirm Password' required/>

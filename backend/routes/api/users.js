@@ -16,7 +16,7 @@ const validateSignup = [
   check('username')
     .exists({ checkFalsy: true })
     .isLength({ min: 4 })
-    .withMessage('Please provide a username with at least 4 characters.'),
+    .withMessage(`Please provide a username with at least 4 characters.`),
   check('username')
     .not()
     .isEmail()
@@ -38,9 +38,7 @@ router.post(
 
     await setTokenCookie(res, user);
 
-    return res.json({
-      user,
-    });
+    return res.json({  user });
   }),
 );
 

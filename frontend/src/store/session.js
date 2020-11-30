@@ -24,16 +24,17 @@ export const restoreUser = () => async dispatch => {
 };
 
 export const signup = (user) => async dispatch => {
-    const { name, email, password } = user;
+    console.log(user)
+    const { username, email, password } = user;
     const res = await fetch('/api/users', {
         method: 'POST',
         body: JSON.stringify({
-            name,
+            username,
             email,
             password
         })
     });
-    dispatch(setUser(res.data.user));
+    dispatch(setUser(res.data));
     return res;
 }
 
