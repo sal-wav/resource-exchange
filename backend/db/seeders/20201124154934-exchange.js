@@ -274,10 +274,24 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      { fundId: 910,
-        amount: 75,
-        title: 'Advanced plus show',
-        description: '15 minute show, gymnastic tricks',
+      { fundId: 10,
+        amount: 5,
+        title: 'Thank you!',
+        description: 'no exchange',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      { fundId: 20,
+        amount: 5,
+        title: 'Thank you!',
+        description: 'no exchange',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      { fundId: 35,
+        amount: 5,
+        title: 'Thank you!',
+        description: 'no exchange',
         createdAt: new Date(),
         updatedAt: new Date()
       },
