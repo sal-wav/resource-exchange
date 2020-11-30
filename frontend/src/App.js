@@ -14,7 +14,6 @@ import FundPage from "./component/FundPage/index";
 import FundForm from "./component/FundForm/fundForm";
 import Footer from "./component/Footer/index";
 
-
 function App(props) {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);

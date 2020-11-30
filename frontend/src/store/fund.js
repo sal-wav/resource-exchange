@@ -34,11 +34,11 @@ export const makeFund = (newFund) => async dispatch => {
     const res = await fetch('/api/fund', {
         method: "POST",
         body: JSON.stringify(newFund)
-    })
-    dispatch(addFund(res.data.fund))
-}
+    });
+    dispatch(addFund(res.data.fund));
+};
 
-export const fundReducer = ( state = { funds: [] }, action) => {
+export const fundReducer = (state = { funds: [] }, action) => {
     let newState;
     switch (action.type) {
         case ADD_FUND:

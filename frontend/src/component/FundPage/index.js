@@ -2,26 +2,37 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as fundActions from "../../store/fund";
+import { receiveExchanges } from "../../store/exchange";
 import "./FundPage.css";
 
 const FundPage = () => {
     const params = useParams();
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
-    const [fundResult, setFundResult] = useState(null)
+    const [fundResult, setFundResult] = useState(null);
+    const [exchangeResults, setExchangeResults] = useState([]);
 
     useEffect(() => {
         dispatch(fundActions.receiveFund()).then(() => setIsLoading(false))
     }, [dispatch])
 
+    useEffect(() => {
+        dispatch(receiveExchanges()).then(() => setIsLoading(false))
+    }, [dispatch])
+
     let funds = useSelector(state => state.fund.funds);
+    let exchanges = useSelector(state => state.exchanges.exchanges);
 
     useEffect(() => {
         let filteredFund = funds.filter(fund => (
             fund.title.includes(params.fundName)
-        ))
+        ));
         setFundResult(filteredFund[0]);
-    }, [funds, params]);
+        let filteredExchanges = exchanges.filter(exchange => (
+            exchange.fundId === fundResult.id
+        ));
+        setExchangeResults([...filteredExchanges]);
+    }, [funds, params, exchanges]);
 
     if(isLoading) return null;
 
@@ -34,10 +45,23 @@ const FundPage = () => {
                 </div>
                 <div className='fundContainer' >
                     <img id='image' src={fundResult.image}></img>
-                    <p id='goal'>{fundResult.goal}</p>
+                    <div className='goalContainer'>
+                        <h2 id='funded'>${fundResult.funded}</h2>
+                        <p id='goal'> contributed of ${fundResult.goal} goal</p>
+                        <div className='exchanges'>
+                            {exchangeResults.map(exchange => (
+                                <div key={exchange.id} className="exchangeContainer">
+                                    <h2 className='amount'>Contribute ${exchange.amount} or more</h2>
+                                    <h3 className='exchangeTitle'>{exchange.title}</h3>
+                                    <p className='exchangeDes'>{exchange.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
                 <div className='descriptionContainer'>
-                    <p>{fundResult.description}</p>
+                    <h1 id='story'>My Story</h1>
+                    <p id='des'>{fundResult.description}</p>
                 </div>
             </div>
         </div>

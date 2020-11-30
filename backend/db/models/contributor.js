@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   Contributor.init({
     fundId: DataTypes.INTEGER,
     contributorId: DataTypes.INTEGER,
-    rewardId: DataTypes.INTEGER
+    Id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Contributor',

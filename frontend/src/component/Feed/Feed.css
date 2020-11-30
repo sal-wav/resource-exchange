@@ -28,7 +28,7 @@
 
 #ftImg {
     grid-row-start: 2;
-    max-height: 350px;
+    max-height: 340px;
 }
 
 #ftTitleLink {
@@ -46,6 +46,10 @@
 
 #ftSubtitle {
     grid-row-start: 4;
+}
+
+#ftFunded {
+    margin: 0;
 }
 
 .recommended {
