@@ -26,6 +26,14 @@ const LoginFormPage = () => {
             });
     }
 
+    const demoLogin = (e) => {
+        e.preventDefault();
+        return dispatch(sessionActions.login({
+            credential: 'demo@user.io',
+            password: 'password'
+        }));
+    };
+
     return (
         <div id='formContainer'>
             <form id='loginForm' onSubmit={handleSubmit}>
@@ -33,9 +41,10 @@ const LoginFormPage = () => {
                     <ul className={errors.length > 0 ? 'errors' : "hiddenErrors"}>
                         {errors.map((error, index) => <li className='error' key={index}>{error}</li>)}
                     </ul>
-                    <input className='input' type='text' value={credential} onChange={(e) => setCredential(e.target.value)} placeholder='Email' required/>
-                    <input className='input' type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password' required/>
-                    <button type='submit' id='loginBtn'>Log In</button>
+                    <input className='userInput' type='text' value={credential} onChange={(e) => setCredential(e.target.value)} placeholder='Email' required/>
+                    <input className='userInput' type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password' required/>
+                    <button type='submit' className='loginBtn'>Log In</button>
+                    <button className='loginBtn' id='demo' onClick={demoLogin}>Log In As Demo User</button>
             </form>
         </div>
     );
