@@ -253,8 +253,34 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-
-
+      { fundId: 9,
+        amount: 20,
+        title: 'Intro juggling show',
+        description: '10 minute show, some laughs, big wows',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      { fundId: 9,
+        amount: 50,
+        title: 'Advanced show',
+        description: '15 minute show, more impressive tricks',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      { fundId: 9,
+        amount: 75,
+        title: 'Advanced plus show',
+        description: '15 minute show, gymnastic tricks',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      { fundId: 910,
+        amount: 75,
+        title: 'Advanced plus show',
+        description: '15 minute show, gymnastic tricks',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 
