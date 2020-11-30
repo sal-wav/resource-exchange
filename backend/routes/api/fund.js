@@ -14,23 +14,13 @@ router.post('/', asyncHandler(async(req, res) => {
         title: req.body.title,
         subtitle: req.body.subtitle,
         description: req.body.description,
-        goal: req.body.goal,
+        goal: Number(req.body.goal),
+        funded: req.body.funded,
         image: req.body.image,
-        categoryId: req.body.categoryId,
+        categoryId: Number(req.body.categoryId),
         ownerId: req.body.ownerId,
-    })
-
-}))
+    });
+    return res.json(fund);
+}));
 
 module.exports = router;
-
-// router.post('/create', requireAuth, asyncHandler(async (req, res, next) => {
-//     const newStory = await Story.create({
-//       title: req.body.title,
-//       subtitle: req.body.subtitle,
-//       content: req.body.content,
-//       authorId: res.locals.user.id,
-//       image: req.body.image
-//     })
-//     res.redirect(`/stories/${newStory.id}`);
-//   }));

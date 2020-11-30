@@ -30,7 +30,7 @@ const Navigation = ({ isLoaded }) => {
                 <NavLink className='link' to={redirect} >Start a fund</NavLink>
             </li>
             <li className='center'>
-                <NavLink className='link' id='home' to='/'exact={true}>Home</NavLink>
+                <NavLink className='link' id='home' to='/'exact={true}>Resource Exchange</NavLink>
             </li>
             <li className='right'>
                 <SearchButton />

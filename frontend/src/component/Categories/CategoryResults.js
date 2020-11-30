@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import * as fundActions from '../../store/fund';
-import { receiveCategory } from "../../store/category";
 import React, { useState, useEffect } from "react";
 
 const CategoryResults = () => {
@@ -14,10 +13,6 @@ const CategoryResults = () => {
     useEffect(() => {
         dispatch(fundActions.receiveFund()).then(() => setIsLoading(false))
     }, [dispatch])
-
-    // useEffect(() => {
-    //     dispatch(receiveCategory()).then(() => setIsLoading(false))
-    // }, [dispatch])
 
     const funds = useSelector(state => state.fund.funds);
     const categories = useSelector(state => state.category.categories);
@@ -46,17 +41,18 @@ const CategoryResults = () => {
             </div>
             <h3 id='explore' className='text'>Explore {results.length} funds</h3>
             <div className='resContainer'>
-                {results.map(result => (
-                        <div className='resPreview'>
-                            <img className='resImg' src={result.image}></img>
+                {results.map((result) => (
+                    <div key={result.id} className='resPreview'>
+                        <img className='resImg' src={result.image}></img>
+                        <div className='caption'>
                             <a className='link' href={`/funds/${result.title}`}>{result.title}</a>
                             <p className='subtitle'>{result.subtitle}</p>
                             <p className='resFunded'>${result.funded} contributed</p>
                             <p className='resGoal'>{Math.floor(result.funded / result.goal * 100)}% funded</p>
                         </div>
+                    </div>
                 ))}
             </div>
-
         </div>
     )
 

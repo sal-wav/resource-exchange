@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import * as fundActions from '../../store/fund';
 import  { receiveCategory } from '../../store/category';
+import './fundForm.css';
 
-const FundForm = () => {
+const FundForm = (props) => {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
+    const [ showTitle, setShowTitle ] = useState(false);
     const [ showSubtitle, setShowSubtitle ] = useState(false);
     const [ showGoal, setShowGoal ] = useState(false);
-    const [ showCategory, setShowCategory ] = useState(false);
     const [ showDescription, setShowDescription ] = useState(false);
+    const [ showImage, setShowImage ] = useState(false);
     const [title, setTitle] = useState('');
     const [subtitle, setSubtitle] = useState('');
     const [description, setDescription] = useState('');
@@ -25,6 +28,11 @@ const FundForm = () => {
     const categories = useSelector(state => state.category.categories);
 
     const ownerId = useSelector(state => state.session.user.id);
+
+    const showTitleInput = (e) => {
+        e.preventDefault();
+        setShowTitle(true);
+    }
 
     const showSubtitleInput = (e) => {
         e.preventDefault();
@@ -41,6 +49,11 @@ const FundForm = () => {
         setShowDescription(true);
     }
 
+    const showImageInput = (e) => {
+        e.preventDefault();
+        setShowImage(true);
+    }
+
     let newFund;
 
 
@@ -51,47 +64,57 @@ const FundForm = () => {
             subtitle,
             description,
             goal,
+            funded: 0,
             image,
             categoryId,
-            // ownerid
-        }
-        dispatch(fundActions.makeFund(newFund))
-
+            ownerId
+        };
+        dispatch(fundActions.makeFund(newFund));
+        props.history.push('/');
     }
 
     if(isLoading) return null;
 
     return (
         <div className='formContainer'>
+            <h1 id='fundHeader'>Start a fund</h1>
+            <h2 id='fundSubhead'>First, select a category</h2>
             <form onSubmit={handleSubmit}>
                 <input type='hidden' value={ownerId}></input>
-                <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder='title' required></input>
-                <button onClick={showSubtitleInput}>next</button>
-                {showSubtitle && (
-                    <>
-                        <input value={subtitle} onChange={(e) => setSubtitle(e.target.value)} placeholder='subtitle'></input>
-                        <button onClick={showGoalInput}>next</button>
-                    </>
-                )}
+                <select className='input' id='selectCat' onChange={(e) => setCategoryId(e.target.value)}>
+                    {categories.map((category) => (
+                        <option key={category.id} value={category.id}>{category.name}</option>
+                    ))}
+                </select>
+                <button className='formBtn' onClick={showGoalInput}>next: goal</button>
                 {showGoal && (
                     <>
-                        <input value={goal} onChange={(e) => setGoal(e.target.value)} placeholder='0.00'></input>
-                        <button onClick={showDescriptionInput}>next</button>
+                        <input className='input' type='number' value={goal} onChange={(e) => setGoal(e.target.value)} placeholder='$0'></input>
+                        <button className='formBtn' onClick={showTitleInput}>next: title</button>
                     </>
                 )}
-                {showCategory && (
+                {showTitle && (
                     <>
-                        <select onChange={(e) => setCategoryId(e.target.value)}>
-                            {categories.map((category) => (
-                                <option value={category.id}>{category.name}</option>
-                            ))}
-                        </select>
+                        <input className='input' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='title' required></input>
+                        <button className='formBtn' onClick={showSubtitleInput}>next: subtitle</button>
+                    </>
+                )}
+                {showSubtitle && (
+                    <>
+                        <input className='input' value={subtitle} onChange={(e) => setSubtitle(e.target.value)} placeholder='subtitle'></input>
+                        <button className='formBtn' onClick={showDescriptionInput}>next: your story</button>
                     </>
                 )}
                 {showDescription && (
                     <>
-                        <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder='description'></textarea>
-                        <button type='submit'>Post my fund</button>
+                        <textarea className='input' id='des' value={description} onChange={(e) => setDescription(e.target.value)} placeholder='Tell us about you.'></textarea>
+                        <button className='formBtn' onClick={showImageInput}>next: image</button>
+                    </>
+                )}
+                {showImage && (
+                    <>
+                        <input className='input' value={image} onChange={(e) => setImage(e.target.value)} placeholder='image url'></input>
+                        <button id='postBtn' className='formBtn' type='submit'>Post my fund</button>
                     </>
                 )}
 
@@ -100,4 +123,4 @@ const FundForm = () => {
     )
 }
 
-export default FundForm;
+export default withRouter(FundForm);

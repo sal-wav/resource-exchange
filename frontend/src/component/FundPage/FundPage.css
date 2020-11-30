@@ -62,7 +62,7 @@
 }
 
 .exchanges {
-    height: 400px;
+    height: 370px;
     overflow-y: scroll;
 }
 
@@ -90,7 +90,7 @@
     padding: 30px;
 }
 
-#des {
+#story {
     font-size: 20px;
     letter-spacing: 1px;
 }

@@ -44,7 +44,7 @@ const FundPage = () => {
                     <p id='fundSubtitle'>{fundResult.subtitle}</p>
                 </div>
                 <div className='fundContainer' >
-                    <img id='image' src={fundResult.image}></img>
+                    <img alt='fundImage' id='image' src={fundResult.image}></img>
                     <div className='goalContainer'>
                         <h2 id='funded'>${fundResult.funded}</h2>
                         <p id='goal'> contributed of ${fundResult.goal} goal</p>
@@ -60,8 +60,8 @@ const FundPage = () => {
                     </div>
                 </div>
                 <div className='descriptionContainer'>
-                    <h1 id='story'>My Story</h1>
-                    <p id='des'>{fundResult.description}</p>
+                    <h1 id='storyHead'>My Story</h1>
+                    <p id='story'>{fundResult.description}</p>
                 </div>
             </div>
         </div>

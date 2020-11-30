@@ -30,7 +30,7 @@ const SearchResults = () => {
             <ResultMessage results={results}/>
             <div className='resContainer'>
                 {results.map(result => (
-                    <div className='resPreview'>
+                    <div key='result.id' className='resPreview'>
                         <img className='resImg' src={result.image}></img>
                         <div className='caption'>
                             <a key={result.title} className='link' href={`/funds/${result.title}`}>{result.title}</a>
