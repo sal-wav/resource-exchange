@@ -43,8 +43,8 @@ const CategoryResults = () => {
             <div className='resContainer'>
                 {results.map((result) => (
                     <div key={result.id} className='resPreview'>
-                        <img className='resImg' src={result.image}></img>
-                        <div className='caption'>
+                        <img alt='' className='resImg' src={result.image}></img>
+                        <div key={result.id} className='caption'>
                             <a className='link' href={`/funds/${result.title}`}>{result.title}</a>
                             <p className='subtitle'>{result.subtitle}</p>
                             <p className='resFunded'>${result.funded} contributed</p>
