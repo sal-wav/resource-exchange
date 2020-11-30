@@ -51,7 +51,8 @@ const CategoryResults = () => {
                             <img className='resImg' src={result.image}></img>
                             <a className='link' href={`/funds/${result.title}`}>{result.title}</a>
                             <p className='subtitle'>{result.subtitle}</p>
-                            <p className='goal'>${result.goal}</p>
+                            <p className='resFunded'>${result.funded} contributed</p>
+                            <p className='resGoal'>{Math.floor(result.funded / result.goal * 100)}% funded</p>
                         </div>
                 ))}
             </div>

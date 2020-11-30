@@ -32,9 +32,12 @@ const SearchResults = () => {
                 {results.map(result => (
                     <div className='resPreview'>
                         <img className='resImg' src={result.image}></img>
-                        <p>{result.title}</p>
-                        <p>{result.subtitle}</p>
-                        <p>${result.goal}</p>
+                        <div className='caption'>
+                            <a key={result.title} className='link' href={`/funds/${result.title}`}>{result.title}</a>
+                            <p key={result.subtitle} className='subtitle'>{result.subtitle}</p>
+                            <p key={result.funded} className='resFunded'>${result.funded} contributed</p>
+                            <p key={result.goal} className='resGoal'>{Math.floor(result.funded / result.goal * 100)}% funded</p>
+                        </div>
                     </div>
                 ))}
             </div>

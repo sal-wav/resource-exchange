@@ -43,9 +43,15 @@
 .resPreview {
     max-width: 390px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-right: auto
+    margin-right: auto;
 }
 
 .resImg {
     max-width: 390px;
+}
+
+.caption {
+    border: 1px solid #DCDEDD;
+    border-top: none;
+    padding: 10px;
 }
