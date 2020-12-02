@@ -18,10 +18,9 @@ function App(props) {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-  }, [dispatch]);
-  useEffect(() => {
-    dispatch(receiveCategory()).then(() => setIsLoaded(true))
+    dispatch(sessionActions.restoreUser())
+    .then(dispatch(receiveCategory()).then(() => setIsLoaded(true)))
+    .then(() => setIsLoaded(true));
   }, [dispatch]);
 
   return isLoaded && (

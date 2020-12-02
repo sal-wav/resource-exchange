@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from 'react';
+import { useSelector } from "react-redux";
 import './Categories.css';
 
 const Categories = ({ isLoaded }) => {

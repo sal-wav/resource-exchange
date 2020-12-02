@@ -13,11 +13,9 @@ const FundPage = () => {
     const [exchangeResults, setExchangeResults] = useState([]);
 
     useEffect(() => {
-        dispatch(fundActions.receiveFund()).then(() => setIsLoading(false))
-    }, [dispatch])
-
-    useEffect(() => {
-        dispatch(receiveExchanges()).then(() => setIsLoading(false))
+        dispatch(fundActions.receiveFund())
+        .then(dispatch(receiveExchanges()))
+        .then(() => setIsLoading(false))
     }, [dispatch])
 
     let funds = useSelector(state => state.fund.funds);
