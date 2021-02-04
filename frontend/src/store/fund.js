@@ -6,7 +6,7 @@ const DELETE_FUND = 'session/deleteFund';
 const ADD_FUND = 'session/addFund';
 
 export const addFund = (fund) => {
-    console.log(`fund in addFund: ${fund}`);
+    // console.log(`fund in addFund: ${fund}`);
     return {
         type: ADD_FUND,
         payload: fund,
@@ -36,7 +36,7 @@ export const makeFund = (newFund) => async dispatch => {
         method: "POST",
         body: JSON.stringify(newFund)
     });
-    console.log(`this is res.data: ${JSON.stringify(newFund)}`);
+    // console.log(`this is res.data: ${JSON.stringify(newFund)}`);
     dispatch(addFund(res.data));
     return res.data;
 };
@@ -45,8 +45,8 @@ export const fundReducer = (state = { funds: [] }, action) => {
     let newState;
     switch (action.type) {
         case ADD_FUND:
-            console.log(`this is state: ${state}`);
-            console.log(`this is state.funds: ${state.funds}`);
+            // console.log(`this is state: ${state}`);
+            // console.log(`this is state.funds: ${state.funds}`);
             newState = Object.assign({}, state);
             newState.funds = [state.funds, action.payload];
             return newState;

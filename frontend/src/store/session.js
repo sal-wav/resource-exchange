@@ -24,7 +24,6 @@ export const restoreUser = () => async dispatch => {
 };
 
 export const signup = (user) => async dispatch => {
-    console.log(user)
     const { username, email, password } = user;
     const res = await fetch('/api/users', {
         method: 'POST',
