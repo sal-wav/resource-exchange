@@ -1,5 +1,4 @@
 #page {
-    border-bottom: 1px solid #DCDEDD;
     background-color: #FBFBFA;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -93,4 +92,7 @@
 #story {
     font-size: 20px;
     letter-spacing: 1px;
+    line-height: 40px;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
 }
