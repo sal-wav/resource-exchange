@@ -9,13 +9,13 @@
 __User authentication__
 * Users can securely create an account using our login and logout feature. melodie uses hash passwords so that no plain text passwords are ever stored in the database. melodie also uses various middleware functions when processing request and responses so that we know a user is who they say they are. Certain routes also require user authenication for pages to be accessed
 
-* Search for fundraisers
+__Search for fundraisers__
 
-* Browse by categories.
+__Browse by categories__
 
-* Create your own fundraisers.
+__Create your own fundraiser__
 
-* View fundraiser pages, with exchange options.
+__View fundraiser pages, with exchange options__
 
 ### In Progress
 
