@@ -21,20 +21,29 @@ const FundPage = () => {
     let funds = useSelector(state => state.fund.funds);
     let exchanges = useSelector(state => state.exchanges.exchanges);
 
-    useEffect(async() => {
+    useEffect(() => {
         let filteredFund = funds.filter(fund => (
             fund.title.includes(params.fundName)
         ));
-        await setFundResult(filteredFund[0]);
-        if (exchanges) {
+        setFundResult(filteredFund[0]);
+        // if (exchanges ) {
+        //     let filteredExchanges = exchanges.filter(exchange => (
+        //         exchange.fundId === fundResult.id
+        //     ));
+        //     setExchangeResults([...filteredExchanges]);
+        // };
+    }, [funds, params]);
+
+    useEffect(() => {
+        if (fundResult) {
             let filteredExchanges = exchanges.filter(exchange => (
                 exchange.fundId === fundResult.id
             ));
             setExchangeResults([...filteredExchanges]);
-        };
-    }, [funds, params, exchanges]);
+        }
+    }, [fundResult, exchanges])
 
-    if(isLoading) return null;
+    if(isLoading || !fundResult) return null;
 
     return (
         <div id='page'>
