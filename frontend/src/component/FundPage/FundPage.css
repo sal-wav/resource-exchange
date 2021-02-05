@@ -41,7 +41,9 @@
 
 #image {
     width: 800px;
+    height: 532px;
     padding: 0 20px 0 20px;
+    object-fit: cover;
 }
 
 .goalContainer {

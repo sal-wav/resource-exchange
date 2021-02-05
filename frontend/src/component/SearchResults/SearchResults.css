@@ -49,8 +49,9 @@
 }
 
 .resImg {
-    max-width: 390px;
+    width: 390px;
     object-fit: cover;
+    height: 290px;
 }
 
 .caption {
