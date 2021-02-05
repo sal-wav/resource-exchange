@@ -26,12 +26,6 @@ const FundPage = () => {
             fund.title.includes(params.fundName)
         ));
         setFundResult(filteredFund[0]);
-        // if (exchanges ) {
-        //     let filteredExchanges = exchanges.filter(exchange => (
-        //         exchange.fundId === fundResult.id
-        //     ));
-        //     setExchangeResults([...filteredExchanges]);
-        // };
     }, [funds, params]);
 
     useEffect(() => {
@@ -53,10 +47,7 @@ const FundPage = () => {
                     <p id='fundSubtitle'>{fundResult.subtitle}</p>
                 </div>
                 <div className='fundContainer' >
-                    { fundResult.image ?
                     <img alt='fundImage' id='image' src={fundResult.image}></img> :
-                    <img alt='fundImage' id='image' src="https://eatlocalapp.s3.amazonaws.com/RE.jpeg"></img>
-                    }
                     <div className='goalContainer'>
                         <h2 id='funded'>${fundResult.funded}</h2>
                         <p id='goal'> contributed of ${fundResult.goal} goal</p>

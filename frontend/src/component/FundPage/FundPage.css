@@ -48,6 +48,7 @@
 
 .goalContainer {
     grid-column-start: 2;
+    grid-row: 1;
     padding-left: 30px;
     border-top: 10px solid #028858;
 }

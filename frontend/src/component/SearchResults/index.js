@@ -31,10 +31,7 @@ const SearchResults = () => {
             <div className='resContainer'>
                 {results.map(result => (
                     <div key='result.id' className='resPreview'>
-                        {result.image ?
                         <img alt="" className='resImg' src={result.image}></img> :
-                        <img alt="" className='resImg' src="https://eatlocalapp.s3.amazonaws.com/RE.jpeg"></img>
-                        }
                         <div className='caption'>
                             <a key={result.title} className='link' href={`/funds/${result.title}`}>{result.title}</a>
                             <p key={result.subtitle} className='subtitle'>{result.subtitle}</p>
