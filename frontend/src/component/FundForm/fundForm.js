@@ -18,7 +18,7 @@ const FundForm = (props) => {
     const [subtitle, setSubtitle] = useState('');
     const [description, setDescription] = useState('');
     const [goal, setGoal] = useState('');
-    const [categoryId, setCategoryId] = useState(null);
+    const [categoryId, setCategoryId] = useState(2);
     const [image, setImage] = useState('');
 
     useEffect(() => {

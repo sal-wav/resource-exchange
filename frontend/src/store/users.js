@@ -10,7 +10,7 @@ export const postUser = (user) => {
 };
 
 export const receiveUsers = () => async dispatch => {
-    const res = await fetch('/api/users');
+    const res = await fetch('/api/users/');
     dispatch(postUser(res.data));
 };
 

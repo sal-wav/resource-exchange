@@ -42,7 +42,10 @@ const FundPage = () => {
                     <p id='fundSubtitle'>{fundResult.subtitle}</p>
                 </div>
                 <div className='fundContainer' >
-                    <img alt='fundImage' id='image' src={fundResult.image}></img>
+                    { fundResult.image ?
+                    <img alt='fundImage' id='image' src={fundResult.image}></img> :
+                    <img alt='fundImage' id='image' src="https://eatlocalapp.s3.amazonaws.com/RE.jpeg"></img>
+                    }
                     <div className='goalContainer'>
                         <h2 id='funded'>${fundResult.funded}</h2>
                         <p id='goal'> contributed of ${fundResult.goal} goal</p>

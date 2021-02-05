@@ -10,7 +10,7 @@ export const postExchange = (exchange) => {
 };
 
 export const receiveExchanges = () => async dispatch => {
-    const res = await fetch('/api/exchange');
+    const res = await fetch('/api/exchange/');
     dispatch(postExchange(res.data));
 };
 

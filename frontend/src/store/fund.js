@@ -27,12 +27,12 @@ export const deleteFund = () => {
 };
 
 export const receiveFund = () => async dispatch => {
-    const res = await fetch('/api/fund');
+    const res = await fetch('/api/fund/');
     dispatch(postFund(res.data));
 };
 
 export const makeFund = (newFund) => async dispatch => {
-    const res = await fetch('/api/fund', {
+    const res = await fetch('/api/fund/', {
         method: "POST",
         body: JSON.stringify(newFund)
     });
