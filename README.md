@@ -14,6 +14,8 @@ __Create your own fundraiser__
 
 __View fundraiser pages, with exchange options__
 
+![reFundPage (1)](https://user-images.githubusercontent.com/69014609/107083884-4f806e80-67c4-11eb-9e89-e8abaeadd38e.gif)
+
 __Search for fundraisers__
 
 ![reSearch](https://user-images.githubusercontent.com/69014609/107082332-04655c00-67c2-11eb-9fc7-d91fea4b0da7.png)
