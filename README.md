@@ -12,6 +12,8 @@ __User authentication__
 
 __Create your own fundraiser__
 
+![reFundForm](https://user-images.githubusercontent.com/69014609/107084238-cc134d00-67c4-11eb-9106-6d3d9acedc1f.gif)
+
 __View fundraiser pages, with exchange options__
 
 ![reFundPage (1)](https://user-images.githubusercontent.com/69014609/107083884-4f806e80-67c4-11eb-9e89-e8abaeadd38e.gif)
