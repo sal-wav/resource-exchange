@@ -112,6 +112,17 @@ module.exports = {
         ownerId: 6,
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      { title: 'Funds Needed to Stay Warm',
+        subtitle: 'My home currently has no heating.',
+        description: 'Due to unfortunate circumstances, my landlord has not addressed problems in my home. This includes heating. I lost my job during the pandemic, and my priority is to continue paying for my bills with what I have saved. I would prefer a long-term fix, by getting it repaired, but I would also appreciate a small heating unit for the time being. If you or someone you know is willing to part with a space heater, please let me know!',
+        goal: 300,
+        funded: 65,
+        image: 'https://images.unsplash.com/photo-1559480194-07f4d40351be?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1054&q=80',
+        categoryId: 1,
+        ownerId: 6,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
 
     ], {});
